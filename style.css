@@ -1,0 +1,98 @@
+:root {
+    /* Cores de Destaque (DNA Dracula) */
+    --cor-primaria: #bd93f9;         /* O Roxo icônico do Dracula */
+    --cor-primaria-hover: #c6a0fc;   /* Um roxo um pouco mais claro para quando passar o mouse */
+    --cor-active-verde: #50fa7b;     /* O Verde Neon perfeito para o seu botão .active */
+
+    /* Fundos (Backgrounds) */
+    --fundo-principal: #282a36;      /* O fundo escuro e profundo clássico */
+    --navbar-escuro: #1e1f29;        /* Um roxo quase preto, excelente para o Nav e o Footer */
+    --fundo-card: #44475a;           /* Um cinza-escuro arroxeado para quando fizermos os cards */
+
+    /* Textos */
+    --texto-claro: #f8f8f2;          /* O branco padrão do Dracula (levemente azulado, não cansa o olho) */
+    --texto-suave: #6272a4;          /* O cinza-médio perfeito para o texto do Footer e botões inativos */
+    --branco: #ffffff;
+
+    /* Bordas e Erros */
+    --borda-roxa: #44475a;           /* Para linhas divisórias sutis */
+    --destaque-vermelho: #ff5555;    /* O vermelho oficial se a tela der "Error" */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--fundo-principal);
+    color: var(--texto-claro);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   COMPONENTE: NAVEGAÇÃO GLOBAL (NAVBAR)
+   ========================================================================== */
+
+
+.navbar {
+    display: flex;                        
+    justify-content: space-between;        
+    align-items: center;  
+    padding: 15px 20px;
+    z-index: 1000;
+    position: sticky;
+    border-bottom: 2px solid var(--cor-primaria);
+    background-color: var(--navbar-escuro);
+    color: var(--texto-claro);
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); }
+.navbar span {
+    color: var(--cor-active-verde);
+    margin: auto 4px;
+}
+
+.navbar .nome {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar .nome i {
+    color: var(--cor-active-verde);
+    font-size: 40px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: var(--texto-claro);
+    font-size: 15px;
+    padding: 6px 12px;
+    margin: 0 2px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3 ease;
+}
+
+.nav-btn:hover,.nav-btn.active {
+    background: var(--cor-active-verde);
+}
+
+/* ==========================================================================
+   COMPONENTE: FOOTER
+   ========================================================================== */
+.footer {
+    background-color: var(--navbar-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    font-size: 14px;
+}

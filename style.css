@@ -19,11 +19,18 @@
     --destaque-vermelho: #ff5555;    /* O vermelho oficial se a tela der "Error" */
 }
 
+.container-global {
+    width: 100%;             /* Ocupa a tela toda em celulares */
+    max-width: 1200px;       /* O limite máximo de largura que você escolheu */
+    margin: 0 auto;          /* Centraliza a caixinha na tela automaticamente */
+    padding: 0 20px;         /* Espaçamento de segurança nas laterais para o texto não colar no canto em telas menores */
+    box-sizing: border-box;  /* Garante que o padding não aumente o tamanho da caixa */
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 body {
@@ -32,7 +39,36 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: 'Sora', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.02em; /
 }
+
+
+h1.title, 
+.header-grid h2, 
+.contato-card-novo h2, 
+.card-obj h2 {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+}
+
+p, .card-pillars p {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    opacity: 0.85;
+    line-height: 1.6;
+}
+
+.terminal-title,                 
+.home-subtitle,                 
+.btn-main,                      
+.dropdown-list li a,             
+.contato-lista-simples strong { 
+    font-family: 'JetBrains Mono', monospace !important;
+    font-variant-ligatures: contextual; 
+}
+
 
 /* ==========================================================================
    COMPONENTE: NAVEGAÇÃO GLOBAL (NAVBAR)
@@ -49,7 +85,7 @@ body {
     border-bottom: 2px solid var(--cor-primaria);
     background-color: var(--navbar-escuro);
     color: var(--texto-claro);
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); }
 .navbar span {
     color: var(--cor-active-verde);
     margin: auto 4px;
@@ -59,7 +95,7 @@ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); }
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 20px;
+    font-size: 40px;
     font-weight: bold;
 }
 
@@ -72,7 +108,7 @@ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); }
     background: none;
     border: none;
     color: var(--texto-claro);
-    font-size: 15px;
+    font-size: 20px;
     padding: 6px 12px;
     margin: 0 2px;
     font-weight: 500;
@@ -84,10 +120,381 @@ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); }
 .nav-btn:hover,.nav-btn.active {
     background: var(--cor-active-verde);
 }
+/* ==========================================================================
+   COMPONENTE: NAVEGAÇÃO GLOBAL (MAIN)
+   ========================================================================== */
 
+.main {
+    animation: surgirtela 0.6s ease-out;
+    background-color: var(--fundo-principal);
+    padding: 60px 0; /* Ajustado padding vertical; o horizontal agora é do container-global */
+    width: 100%;
+} 
+
+/* Força os elementos dentro do container global a se alinharem corretamente */
+.main .container-global {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+@keyframes surgirtela {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.badge {
+    background-color: #44475a;
+    color: var(--cor-active-verde);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    /* CORREÇÃO 1: O correto é font-weight, e não font-width */
+    font-weight: bold; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px rgba(80,250,123,0.2);
+    margin-bottom: 20px;
+}
+
+.picture img {
+    border-radius: 25%;
+    object-fit: cover;
+    border: 2px solid var(--cor-primaria);
+    box-shadow: 0 0 20px rgba(189, 147, 249, 0.3);
+    /* CORREÇÃO 2: Faltava o "s" em "0.3s" para a transição funcionar */
+    transition: transform 0.3s ease; 
+    margin-bottom: 20px;
+}
+
+.picture img:hover {
+    transform: scale(1.05);
+}
+
+.home-text {
+    max-width: 850px;
+    background-color: var(--fundo-card);
+    padding: 40px 50px;
+    border: 2px solid var(--cor-primaria);
+    border-top: none;
+    border-radius: 15px; /* CORREÇÃO 3: border-radius em % deforma caixas de texto longas. Mudado para px. */
+    
+    /* Ativa o flex para alinhar o conteúdo interno se necessário */
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.home-text .title-span {
+    color: var(--cor-active-verde);
+}
+
+.home-text .title {
+    font-size: 2.5rem;
+    color: var(--texto-claro);
+    margin-bottom: 10px;
+}
+
+.home-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--texto-claro);
+    opacity: 0.85;
+}
+
+.btn-main { 
+    background-color: var(--cor-active-verde);
+    color: var(--navbar-escuro);
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    /* CORREÇÃO 4: Faltava o "s" em "0.3s" na transição */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; 
+    gap: 20px;
+}
+
+.btn-main:hover {
+    background-color: var(--cor-primaria-hover);
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 20px rgba(189, 147, 249, 0.4); 
+}
+
+.btn-main:active {
+    transform: translateY(-1px); 
+}  
+
+.grid {
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+.header-grid {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header-grid h2 {
+    font-family: 'Sora', sans-serif;
+    color: var(--texto-claro);
+    font-size: 2.5rem; 
+    font-weight: 700;
+    text-transform: uppercase; 
+    letter-spacing: 0.05em; 
+    margin-bottom: 16px;
+    position: relative;
+    display: inline-block;  
+}
+.header-grid h2::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background-color: var(--cor-primaria); 
+    border-radius: 2px;
+}
+.header-grid p {
+    font-family: 'Sora', sans-serif;
+    color: var(--texto-suave); 
+    font-size: 1rem; 
+    line-height: 1.6;
+    max-width: 500px; 
+    margin: 0 auto;
+    opacity: 0.85;
+}
+
+.pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 35px; 
+    max-width: 1280px;
+    margin: 0 auto; 
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.card-pillars {
+    background-color: var(--fundo-card);
+    border-radius: 15px;
+    border: 2px solid var(--cor-primaria);
+    box-shadow: 0 8px 20px rgba(189, 147, 249, 0.4); 
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between; 
+    
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    max-height: 180px; 
+    overflow: hidden;
+}
+.card-pillars:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(189, 147, 249, 0.6);
+}
+.card-pillars h3 {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--texto-claro);
+    margin: 12px 0 6px 0;
+    width: 100%;
+    border-bottom: 1px solid var(--cor-primaria);
+    padding-bottom: 2px;
+}
+.card-pillars p {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--texto-claro);
+    line-height: 1.5;
+    
+    margin: 4px 0 0 0;
+    width: 100%;
+    
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.card-pillars {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(189, 147, 249, 0.4); 
+    border-color: var(--cor-primaria);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    text-align: center;
+    max-height: 180px;
+    overflow: hidden;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.pillar-icon {
+    width: 55px;
+    height: 55px;
+    background-color: var(--fundo-principal);
+    color: var(--cor-primaria);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+
+}
+
+
+.contato-card {
+    background: var(--fundo-card);
+    margin-top: 50px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(189, 147, 249, 0.4); 
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+}
+.contato-card h2 {
+    font-family: 'Sora', sans-serif;
+    color: var(--texto-claro);
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 25px;
+    font-weight: 700;
+    border-bottom: 3px solid var(--cor-primaria); 
+    padding-bottom: 8px; 
+    display: inline-block; 
+}
+.contato-lista-simples {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contato-lista p{
+    font-family: 'Sora', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    color: var(--texto-claro);
+    animation: surgirItem 0.5s ease-out both;
+}
+.contato-lista-simples p:nth-child(1) { animation-delay: 0.1s; }
+.contato-lista-simples p:nth-child(2) { animation-delay: 0.2s; }
+.contato-lista-simples p:nth-child(3) { animation-delay: 0.3s; }
+.contato-lista-simples p:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes surgirItem {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.contato-lista i{
+    color: var(--cor-active-verde);
+    font-size: 1.25rem;
+    width: 24px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.contato-lista a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: color 0.2s ease, border-bottom 0.2s ease;
+    border-bottom: 1px solid transparent;    
+    padding-bottom: 2px;
+}
+.contato-lista-simples p:hover i {
+    transform: scale(1.2) rotate(5deg); 
+}
+.contato-lista-simples a:hover {
+    color: var(--cor-primaria); 
+    border-bottom: 1px solid var(--cor-primaria);
+    padding-left: 4px; 
+}
+
+.obj {
+    margin-top: 60px;
+    margin-bottom: 80px;
+    width: 100%;
+}
+
+.card-obj {
+    /* Fundo moderno estilo vidro fosco (Glassmorphism sutil) */
+    background: linear-gradient(135s, rgba(40, 42, 54, 0.8), rgba(30, 31, 41, 0.9));
+    padding: 45px 50px;
+    border-radius: 24px; /* Bordas mais arredondadas e orgânicas */
+    
+    /* Borda e sombra com brilho verde neon (hacker) bem discreto */
+    border: 1px solid rgba(80, 250, 123, 0.1); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(80, 250, 123, 0.05);
+    
+    /* Nova animação de revelação central */
+    animation: revelarObjetivo 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 0.4s;
+}
+
+@keyframes revelarObjetivo {
+    from { 
+        opacity: 0; 
+        transform: scale(0.95) translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: scale(1) translateY(0); 
+    }
+}
+
+.card-obj h2 {
+    font-family: 'JetBrains Mono', monospace !important; /* Visual de código para diferenciar */
+    color: var(--cor-active-verde); /* Destaque no verde em vez de branco */
+    font-size: 1.8rem;
+    text-transform: lowercase; /* Tudo minúsculo estilo variável de sistema */
+    letter-spacing: -0.02em;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* Adiciona um prefixo estático antes do título, imitando terminal */
+.card-obj h2::before {
+    content: 'target: ';
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 400;
+}
+
+.card-obj p {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: var(--texto-claro);
+    margin: 0;
+    
+    /* A MÁGICA DO DESTAQUE: Uma barra vertical elegante na esquerda do parágrafo */
+    border-left: 4px solid var(--cor-primaria); /* A barra roxa entra aqui */
+    padding-left: 20px; /* Afasta o texto da barra */
+}
 /* ==========================================================================
    COMPONENTE: FOOTER
    ========================================================================== */
+
 .footer {
     background-color: var(--navbar-escuro);
     color: var(--branco);

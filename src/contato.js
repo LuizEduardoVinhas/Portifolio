@@ -1,0 +1,1 @@
+export const ContatoScreen = { render: () => '<h2>Tela de Contato</h2>' };

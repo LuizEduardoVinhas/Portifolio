@@ -11,10 +11,10 @@ export const HomeScreen = {
 
                 <div class="home-text">
                     <h1 class="title">Sou um <span class="title-span">Desenvolvedor em ascensão</span></h1>
-                    <h2 class="home-subtitle">Estudante de Sistemas de Informação & Dev</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur deleniti eius quaerat, explicabo amet
-                    ut unde sit necessitatibus quia asperiores animi eos corrupti recusandae possimus voluptate, repellendus
-                    cumque blanditiis? Impedit!</p>
+                    <h2 class="home-subtitle">Sistemas de Informação & Desenvolvimento de Software</h2>
+                    <p class="home-p">
+                    Estudante de Sistemas de Informação em busca da primeira oportunidade profissional em desenvolvimento, manutenção ou análise de software. Focado em <strong>Back-end</strong> e em transição para <strong>Fullstack</strong>, possuo base técnica em banco de dados, UX/UI, sistemas operacionais, cibersegurança e redes. Sou proativo, adaptável e colaborativo, aplicando liderança e criatividade para resolver desafios técnicos e impulsionar o crescimento da equipe.
+                    </p>
                 </div>
 
                 <div class="home-actions">
@@ -26,39 +26,38 @@ export const HomeScreen = {
         </section>
 
         <section class="grid">
-            <div class="container-global">
-                <div class="header-grid">
-                    <h2>Projetos</h2>
-                    <p>Aplicações e ecossistemas de código desenvolvidos com foco em performance.</p>
-                </div>
-
-                <div class="pillars">
-                    <div class="card-pillars">
-                        <div class="pillar-icon">
-                            <i class="fa-solid fa-folder-open"></i>
-                        </div>
-                        <h3>Rede de tubarão</h3>
-                        <p>Descrição breve do projeto aqui.</p>
-                    </div>
-
-                    <div class="card-pillars">
-                        <div class="pillar-icon">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-                        <h3>Teacher Page</h3>
-                        <p>Descrição breve do projeto aqui.</p>
-                    </div>
-
-                    <div class="card-pillars">
-                        <div class="pillar-icon">
-                            <i class="fa-solid fa-gear"></i>
-                        </div>
-                        <h3>Adotei Por Amor</h3>
-                        <p>Descrição breve do projeto aqui.</p>
-                    </div>
-                </div>
+        <div class="container-global">
+            <div class="header-grid">
+                <h2>Projetos</h2>
+                <p>Aplicações e ecossistemas de código desenvolvidos com foco em performance.</p>
             </div>
-        </section>
+
+            <div class="pillars">
+                
+                <div class="card-pillars">
+                    <div class="pillar-icon">
+                        <i class="fa-solid fa-fish"></i> </div>
+                    <h3>Rede Tubarão</h3>
+                    <p>Plataforma desenvolvida para mapear, analisar e disponibilizar informações estatísticas sobre o comportamento e histórico de incidentes envolvendo ataques de tubarões em Recife e Região Metropolitana, auxiliando na conscientização pública.</p>
+                </div>
+
+                <div class="card-pillars">
+                    <div class="pillar-icon">
+                        <i class="fa-solid fa-chalkboard-user"></i> </div>
+                    <h3>Teacher Page</h3>
+                    <p>Landing page institucional e comercial sob medida para uma docente autônoma. O site centraliza a divulgação de informações profissionais, agendamento de horários e viabiliza a venda direta de aulas e materiais didáticos digitais.</p>
+                </div>
+
+                <div class="card-pillars">
+                    <div class="pillar-icon">
+                        <i class="fa-solid fa-paw"></i> </div>
+                    <h3>Adotei Por Amor</h3>
+                    <p>Plataforma web criada com o objetivo de conectar protetores independentes a adotantes responsáveis, facilitando e viabilizando o processo completo de adoção de animais de forma segura, organizada e intuitiva.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
         <section class="obj">
             <div class="container-global">
@@ -69,15 +68,35 @@ export const HomeScreen = {
             </div>
         </section>
 
-        <section class="jornada">
-            <div class="container-global">
-                <h2> MINHA JORNADA</h2>
+    <section class="jornada">
+        <div class="container-global">
+    
+            <h2>MINHA JORNADA</h2>
+
+            <div class="timeline">
+
                 <div class="timeline-item">
-                    <div class="" 
                     <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2026 - Cursando</span>
+                        <h3>Sistemas de Informação</h3>
+                        <h4>Uninassau Graças</h4>
+                        <p>Desenvolvendo bases sólidas em engenharia de requisitos, governança de TI, arquitetura de sistemas e desenvolvimento de software.</p>
+                    </div>
                 </div>
-            </div>
-        </section>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                    <span class="timeline-date">2026</span>
+                        <h3>Técnico em tecnologia da informação</h3>
+                        <h4>Senac Recife</h4>
+                        <p>Especialização em infraestrutura de redes, montagem e manutenção de computadores, lógica de programação.</p>
+                    </div>
+                </div>
+
+            </div> </div>
+    </section>
 
         <section class="contato">
             <div class="container-global">

@@ -1,30 +1,27 @@
 :root {
-    /* Cores de Destaque (DNA Dracula) */
-    --cor-primaria: #bd93f9;         /* O Roxo icônico do Dracula */
-    --cor-primaria-hover: #c6a0fc;   /* Um roxo um pouco mais claro para quando passar o mouse */
-    --cor-active-verde: #50fa7b;     /* O Verde Neon perfeito para o seu botão .active */
+    /* Cores de Destaque  */
+    --cor-primaria: #bd93f9;        
+    --cor-primaria-hover: #c6a0fc;   
+    --cor-active-verde: #50fa7b;    
 
     /* Fundos (Backgrounds) */
-    --fundo-principal: #282a36;      /* O fundo escuro e profundo clássico */
-    --navbar-escuro: #1e1f29;        /* Um roxo quase preto, excelente para o Nav e o Footer */
-    --fundo-card: #44475a;           /* Um cinza-escuro arroxeado para quando fizermos os cards */
-
+    --fundo-principal: #282a36;     
+    --navbar-escuro: #1e1f29;        
+    --fundo-card: #44475a;           
     /* Textos */
-    --texto-claro: #f8f8f2;          /* O branco padrão do Dracula (levemente azulado, não cansa o olho) */
-    --texto-suave: #6272a4;          /* O cinza-médio perfeito para o texto do Footer e botões inativos */
-    --branco: #ffffff;
+    --texto-claro: #f8f8f2;         
 
     /* Bordas e Erros */
-    --borda-roxa: #44475a;           /* Para linhas divisórias sutis */
-    --destaque-vermelho: #ff5555;    /* O vermelho oficial se a tela der "Error" */
+    --borda-roxa: #44475a;           
+    --destaque-vermelho: #ff5555;    
 }
 
 .container-global {
-    width: 100%;             /* Ocupa a tela toda em celulares */
-    max-width: 1200px;       /* O limite máximo de largura que você escolheu */
-    margin: 0 auto;          /* Centraliza a caixinha na tela automaticamente */
-    padding: 0 20px;         /* Espaçamento de segurança nas laterais para o texto não colar no canto em telas menores */
-    box-sizing: border-box;  /* Garante que o padding não aumente o tamanho da caixa */
+    width: 100%;            
+    max-width: 1200px;      
+    margin: 0 auto;          
+    padding: 0 20px;         
+    box-sizing: border-box; 
 }
 
 * {
@@ -41,7 +38,7 @@ body {
     min-height: 100vh;
     font-family: 'Sora', sans-serif;
     -webkit-font-smoothing: antialiased;
-    letter-spacing: -0.02em; /
+    letter-spacing: -0.02em;    
 }
 
 
@@ -86,6 +83,7 @@ p, .card-pillars p {
     background-color: var(--navbar-escuro);
     color: var(--texto-claro);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); }
+
 .navbar span {
     color: var(--cor-active-verde);
     margin: auto 4px;
@@ -127,11 +125,10 @@ p, .card-pillars p {
 .main {
     animation: surgirtela 0.6s ease-out;
     background-color: var(--fundo-principal);
-    padding: 60px 0; /* Ajustado padding vertical; o horizontal agora é do container-global */
+    padding: 60px 0; 
     width: 100%;
 } 
 
-/* Força os elementos dentro do container global a se alinharem corretamente */
 .main .container-global {
     display: flex;
     flex-direction: column;
@@ -151,7 +148,6 @@ p, .card-pillars p {
     padding: 6px 16px;
     border-radius: 30px;
     font-size: 1.5rem;
-    /* CORREÇÃO 1: O correto é font-weight, e não font-width */
     font-weight: bold; 
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -164,7 +160,6 @@ p, .card-pillars p {
     object-fit: cover;
     border: 2px solid var(--cor-primaria);
     box-shadow: 0 0 20px rgba(189, 147, 249, 0.3);
-    /* CORREÇÃO 2: Faltava o "s" em "0.3s" para a transição funcionar */
     transition: transform 0.3s ease; 
     margin-bottom: 20px;
 }
@@ -173,15 +168,37 @@ p, .card-pillars p {
     transform: scale(1.05);
 }
 
+.home-subtitle {
+    color: var(--cor-primaria);
+    margin: 5px;
+    font-size: 1.5rem;
+
+}
+
+.home-p {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--texto-claro); 
+    opacity: 0.85;
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+
+.home-p strong {
+    color: var(--cor-active-verde);
+    font-weight: 600;
+}
 .home-text {
     max-width: 850px;
     background-color: var(--fundo-card);
     padding: 40px 50px;
     border: 2px solid var(--cor-primaria);
     border-top: none;
-    border-radius: 15px; /* CORREÇÃO 3: border-radius em % deforma caixas de texto longas. Mudado para px. */
-    
-    /* Ativa o flex para alinhar o conteúdo interno se necessário */
+    border-radius: 15px; 
     display: flex; 
     align-items: center;
     flex-direction: column;
@@ -203,6 +220,7 @@ p, .card-pillars p {
     line-height: 1.6;
     color: var(--texto-claro);
     opacity: 0.85;
+
 }
 
 .btn-main { 
@@ -216,7 +234,6 @@ p, .card-pillars p {
     cursor: pointer;
     display: flex;
     align-items: center;
-    /* CORREÇÃO 4: Faltava o "s" em "0.3s" na transição */
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; 
     gap: 20px;
 }
@@ -231,9 +248,12 @@ p, .card-pillars p {
     transform: translateY(-1px); 
 }  
 
+/* ==========================================================================
+   SEÇÃO DE PROJETOS (GRID & PILLARS) - ALINHADO À ESQUERDA COM SOMBRA PURPLE
+   ========================================================================== */
+
 .grid {
-    margin-top: 30px;
-    padding: 20px 0;
+    padding: 40px 0;
 }
 
 .header-grid {
@@ -252,6 +272,7 @@ p, .card-pillars p {
     position: relative;
     display: inline-block;  
 }
+
 .header-grid h2::after {
     content: '';
     position: absolute;
@@ -263,6 +284,7 @@ p, .card-pillars p {
     background-color: var(--cor-primaria); 
     border-radius: 2px;
 }
+
 .header-grid p {
     font-family: 'Sora', sans-serif;
     color: var(--texto-suave); 
@@ -287,64 +309,27 @@ p, .card-pillars p {
 .card-pillars {
     background-color: var(--fundo-card);
     border-radius: 15px;
-    border: 2px solid var(--cor-primaria);
+    border: 2px solid var(--cor-primaria); 
     box-shadow: 0 8px 20px rgba(189, 147, 249, 0.4); 
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
     
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between; 
+    align-items: flex-start; 
+    text-align: left;        
     
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
-    max-height: 180px; 
-    overflow: hidden;
+    
+    min-height: 280px; 
 }
+
 .card-pillars:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(189, 147, 249, 0.6);
+    box-shadow: 0 12px 25px rgba(189, 147, 249, 0.6); /* Sombra roxa intensificada */
 }
-.card-pillars h3 {
-    font-family: 'JetBrains Mono', monospace !important;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--texto-claro);
-    margin: 12px 0 6px 0;
-    width: 100%;
-    border-bottom: 1px solid var(--cor-primaria);
-    padding-bottom: 2px;
-}
-.card-pillars p {
-    font-family: 'Sora', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 400;
-    color: var(--texto-claro);
-    line-height: 1.5;
-    
-    margin: 4px 0 0 0;
-    width: 100%;
-    
-    display: -webkit-box;
-    -webkit-line-clamp: 2; 
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-.card-pillars {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(189, 147, 249, 0.4); 
-    border-color: var(--cor-primaria);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    text-align: center;
-    max-height: 180px;
-    overflow: hidden;
-    min-height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 
-}
 .pillar-icon {
     width: 55px;
     height: 55px;
@@ -357,7 +342,28 @@ p, .card-pillars p {
     font-size: 1.5rem;
     margin-bottom: 5px;
     transition: background 0.3s ease, color 0.3s ease;
+}
 
+.card-pillars h3 {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--texto-claro);
+    margin: 12px 0 6px 0;
+    width: 100%;
+    border-bottom: 1px solid var(--cor-primaria); 
+}
+
+.card-pillars p {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--texto-claro);
+    line-height: 1.5;
+    margin: 8px 0 0 0;
+    width: 100%;
+    opacity: 0.85;
+    display: block; 
 }
 
 
@@ -368,6 +374,7 @@ p, .card-pillars p {
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(189, 147, 249, 0.4); 
     border: 1px solid rgba(255, 255, 255, 0.05); 
+    margin-bottom: 30px;
 }
 .contato-card h2 {
     font-family: 'Sora', sans-serif;
@@ -447,7 +454,6 @@ p, .card-pillars p {
     border: 1px solid rgba(80, 250, 123, 0.1); 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(80, 250, 123, 0.05);
     
-    /* Nova animação de revelação central */
     animation: revelarObjetivo 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
     animation-delay: 0.4s;
 }
@@ -473,7 +479,6 @@ p, .card-pillars p {
     font-weight: 600;
 }
 
-/* Adiciona um prefixo estático antes do título, imitando terminal */
 .card-obj h2::before {
     content: 'target: ';
     color: rgba(255, 255, 255, 0.3);
@@ -487,10 +492,131 @@ p, .card-pillars p {
     color: var(--texto-claro);
     margin: 0;
     
-    /* A MÁGICA DO DESTAQUE: Uma barra vertical elegante na esquerda do parágrafo */
-    border-left: 4px solid var(--cor-primaria); /* A barra roxa entra aqui */
-    padding-left: 20px; /* Afasta o texto da barra */
+    border-left: 4px solid var(--cor-primaria); 
+    padding-left: 20px; 
 }
+
+/* ==========================================================================
+   4. SEÇÃO JORNADA (TIMELINE MODERNA)
+   ========================================================================== */
+
+.jornada {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+.jornada h2 {
+    font-family: 'Sora', sans-serif;
+    color: var(--texto-claro);
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 40px;
+    font-weight: 700;
+    border-bottom: 3px solid var(--cor-primaria);
+    padding-bottom: 8px;
+    display: inline-block;    
+}
+
+.timeline { 
+    position: relative;
+    border-left: 2px dashed rgba(189, 147, 249, 0.3);
+    margin-left: 15px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column; 
+    gap: 40px;
+}
+
+.timeline-item {
+    position: relative;
+    /* Ajustado para bater exatamente com o nome do @keyframes abaixo */
+    animation: surgirLinhaTempo 0.6s ease-out both;
+}
+
+/* Efeito cascata: Uninassau aparece primeiro, Senac logo em seguida */
+.timeline-item:nth-child(1) { animation-delay: 0.2s; }
+.timeline-item:nth-child(2) { animation-delay: 0.4s; }
+
+.timeline-dot {
+    position: absolute;
+    left: -39px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--fundo-card);
+    border: 3px solid var(--cor-active-verde);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(80, 250, 123, 0.4);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+} /* CORREÇÃO: Removido o ';' daqui que estava quebrando a sintaxe */
+
+.timeline-content {
+    background: var(--fundo-card);
+    padding: 25px 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    border-color: rgba(189, 147, 249, 0.4);
+    transform: translateX(6px);
+}
+
+.timeline-item:hover .timeline-dot {
+    background-color: var(--cor-active-verde);
+    transform: scale(1.2);
+}
+
+.timeline-date {
+    display: inline-block;
+    color: #8be9fd;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;    
+}
+
+.timeline-content h3 {
+    font-family: 'Sora', sans-serif;
+    color: var(--texto-claro);
+    font-size: 1.2rem;
+    margin: 0 0 4px 0;
+    font-weight: 600;
+}
+
+.timeline-content h4 {
+    font-family: 'Sora', sans-serif;
+    color: var(--texto-suave);
+    font-size: 1rem;
+    margin: 0 0 12px 0;
+    font-weight: 400;
+}
+
+.timeline-content p {
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--texto-claro);
+    margin: 0;
+    opacity: 0.85;
+}
+
+@keyframes surgirLinhaTempo {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+   
 /* ==========================================================================
    COMPONENTE: FOOTER
    ========================================================================== */

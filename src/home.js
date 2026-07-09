@@ -29,7 +29,7 @@ export const HomeScreen = {
         <div class="container-global">
             <div class="header-grid">
                 <h2>Projetos</h2>
-                <p>Aplicações e ecossistemas de código desenvolvidos com foco em performance.</p>
+                <p>Aplicações de código desenvolvidos com foco em resolução de demandas reais.</p>
             </div>
 
             <div class="pillars">

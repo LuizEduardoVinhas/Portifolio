@@ -142,8 +142,8 @@ p, .card-pillars p {
     border: none;
     color: var(--texto-suave); 
     font-family: 'Sora', sans-serif;
-    font-size: 1.3rem; 
-    padding: 12px 24px; 
+    font-size: 1.2rem; 
+    padding: 12px 22px; 
     font-weight: 600;
     cursor: pointer;
     border-radius: 10px; 
@@ -781,4 +781,276 @@ p, .card-pillars p {
 
 .btn-enviar:active {
     transform: translateY(0);
+}
+
+/* Regras para Tablets */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 20px 4%;
+    }
+
+    .navbar .nome h1 {
+        font-size: 2rem;
+    }
+
+    .navbar .nome i {
+        font-size: 2.2rem;
+    }
+
+    .pillars {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 0 20px;
+    }
+
+    .header-grid h2 {
+        font-size: 2rem;
+    }
+
+    .home-text {
+        padding: 30px 40px;
+    }
+
+    .home-text .title {
+        font-size: 2rem;
+    }
+
+    .home-p {
+        font-size: 0.95rem;
+    }
+
+    .form-contato {
+        max-width: 500px;
+        padding: 30px;
+    }
+}
+
+/* Regras para Celulares e Smartphones */
+@media (max-width: 768px) {
+    .container-global {
+        padding: 0 20px;
+    }
+
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 16px 4%;
+        border-bottom: 2px solid var(--cor-primaria);
+    }
+
+    .navbar .nome {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .navbar .nome h1 {
+        font-size: 1.8rem;
+    }
+
+    .navbar .nome i {
+        font-size: 2rem;
+    }
+
+    .logo-text small {
+        font-size: 0.75rem;
+        letter-spacing: 0.3em;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    /* Main */
+    .main {
+        padding: 40px 0;
+    }
+
+    .badge {
+        font-size: 1.2rem;
+        padding: 5px 12px;
+    }
+
+    .picture img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .home-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .home-text {
+        padding: 25px 20px;
+        border-radius: 10px;
+    }
+
+    .home-text .title {
+        font-size: 1.5rem;
+    }
+
+    .home-text p {
+        font-size: 0.9rem;
+    }
+
+    .home-p {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+
+    .btn-main {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Grid de Projetos */
+    .pillars {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .header-grid h2 {
+        font-size: 1.8rem;
+    }
+
+    .header-grid p {
+        font-size: 0.9rem;
+    }
+
+    .card-pillars {
+        padding: 15px;
+        min-height: auto;
+    }
+
+    .card-pillars h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-pillars p {
+        font-size: 0.85rem;
+    }
+
+    .pillar-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+
+    /* Objetivo */
+    .obj {
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+
+    .card-obj {
+        padding: 30px 20px;
+        border-radius: 16px;
+    }
+
+    .card-obj h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-obj p {
+        font-size: 1rem;
+        padding-left: 15px;
+    }
+
+    /* Jornada */
+    .jornada h2 {
+        font-size: 1.5rem;
+    }
+
+    .timeline {
+        margin-left: 10px;
+        padding-left: 20px;
+        gap: 30px;
+    }
+
+    .timeline-dot {
+        left: -30px;
+        width: 14px;
+        height: 14px;
+    }
+
+    .timeline-content {
+        padding: 20px 20px;
+    }
+
+    .timeline-date {
+        font-size: 0.85rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .timeline-content h4 {
+        font-size: 0.95rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.9rem;
+    }
+
+    /* Contato */
+    .contato-card {
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .contato-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .contato-lista p {
+        font-size: 1rem;
+        gap: 10px;
+    }
+
+    .contato-lista i {
+        font-size: 1rem;
+    }
+
+    /* Formulário */
+    .form-contato {
+        max-width: 100%;
+        padding: 25px 20px;
+        gap: 15px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px 14px;
+        font-size: 16px;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .btn-enviar {
+        padding: 12px 0;
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 12px;
+        padding: 15px;
+    }
 }

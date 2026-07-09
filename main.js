@@ -1,21 +1,22 @@
 
 import {HomeScreen} from './src/home.js'
 import {ContatoScreen} from './src/contato.js'
-import {ProjetosScreen} from './src/projetos.js'
 
 
 const routes = {
     home: HomeScreen,
     contato: ContatoScreen,
-    projetos: ProjetosScreen
 };
 
-export function navigateTo(screenPlay) {
+export function navigateTo(screenPlay,idParam = null) {
     const screen = routes[screenPlay];
     const appCont = document.getElementById("app");
 
     if(screen) {
-        appCont.innerHTML = screen.render();
+        appCont.innerHTML = screen.render(idParam);
+            if(screen.after_render) {
+                screen.after_render(navigateTo,idParam)
+            }
         }
     else {
         appCont.innerHTML = '<h2> Error </h2>'

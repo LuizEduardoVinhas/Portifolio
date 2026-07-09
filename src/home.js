@@ -18,8 +18,8 @@ export const HomeScreen = {
                 </div>
 
                 <div class="home-actions">
-                    <button class="btn-main" onclick="document.querySelector('[data-screen=\\'contato\\']').click()">
-                        <i class="fa-solid fa-code"></i> Fale comigo
+                    <button class="btn-main" onclick="window.open('https://wa.me/55819817169?text=Olá,%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto!', '_blank')">
+                        <i class="fa-brands fa-whatsapp"></i> Fale comigo
                     </button>
                 </div>
             </div>
